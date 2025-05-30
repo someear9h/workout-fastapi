@@ -1,3 +1,4 @@
 .idea/
 .env
 workoutenv/
+workout_app.db
