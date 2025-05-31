@@ -33,9 +33,9 @@ class Token(BaseModel):
 def authenticate_user(username: str, password: str, db):
     user = db.query(User).filter(User.username == username).first()
     if not User:
-        return False
+        return None
     if not bcrypt_context.verify(password, user.hashed_password):
-        return False
+        return None
     return user
 
 def create_access_token(username: str, user_id: int, expires_delta: timedelta):
